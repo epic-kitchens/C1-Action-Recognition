@@ -8,3 +8,6 @@ Coming soon...
 - Pretrained models on Val set
 - Evaluation metrics
 - Code for generating JSON submissions
+
+- For TBN see https://github.com/ekazakos/temporal-binding-network
+- For SlowFast see https://github.com/epic-kitchens/AViLSlowFast
