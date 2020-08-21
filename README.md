@@ -10,4 +10,4 @@ Coming soon...
 - Code for generating JSON submissions
 
 - For TBN see https://github.com/ekazakos/temporal-binding-network
-- For SlowFast see https://github.com/epic-kitchens/AViLSlowFast
+- For SlowFast see https://github.com/epic-kitchens/AViLSlowFast (to be released)
