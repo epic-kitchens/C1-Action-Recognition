@@ -1,1 +1,2 @@
-# C1-Action-Recognition
+# EPIC-KITCHENS Action Recognition baselines
+
