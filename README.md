@@ -1,5 +1,7 @@
 # EPIC-KITCHENS Action Recognition baselines
 
+Coming soon...
+
 - Model definitions TSN/TRN/TSM
 - Training script
 - Testing script
