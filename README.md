@@ -1,5 +1,9 @@
 # EPIC-KITCHENS Action Recognition baselines
 
+Train/Val/Test splits and annotations are available at [Annotations Repo](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
+
+To participate and submit to this challenge, register at [Action Recognition Codalab Challenge](https://competitions.codalab.org/competitions/25923)
+
 Coming soon...
 
 - Model definitions TSN/TRN/TSM
