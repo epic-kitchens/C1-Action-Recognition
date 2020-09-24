@@ -8,7 +8,7 @@ To participate and submit to this challenge, register at [Action Recognition Cod
 
 
 - For TBN see https://github.com/ekazakos/temporal-binding-network
-- For SlowFast see https://github.com/epic-kitchens/AViLSlowFast (to be released)
+- For SlowFast see https://github.com/epic-kitchens/SlowFast (to be released)
 
 
 # Coming soon...
