@@ -38,8 +38,8 @@ Either of these formats can saved via `torch.save` with `.pt` suffix or with
 
 We provide two example files (from a TSN trained on RGB) following both these formats for reference.
 
-- Dict format saved as `.pkl`: https://www.dropbox.com/s/5bfn8p0lw5quy68/dict_format.pkl?dl=1
-- List format saved as `.pt`: https://www.dropbox.com/s/4ouop6n267l3ip9/list_format.pt?dl=1
+- Dict format saved as `.pkl`: https://www.dropbox.com/s/5bfn8p0lw5quy68/dict_format.pkl?dl=0
+- List format saved as `.pt`: https://www.dropbox.com/s/4ouop6n267l3ip9/list_format.pt?dl=0
 
 Note that either of these layouts can be stored in a `.pkl`/`.pt` file--the dict
 format doesn't necessarily have to be in a `.pkl`.
