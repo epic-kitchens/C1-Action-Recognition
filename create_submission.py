@@ -14,10 +14,30 @@ parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter,
 )
 parser.add_argument(
-        "scores_pt",
+        "scores",
         type=Path,
-        help="Path to a results file which when read by torch.load yields a list of "
-             "dictionaries containing the keys: verb_output, noun_output, narration_id",
+        help=dedent("""\
+        Path to a results file with either a .pt suffix (loadable via `torch.load`) or 
+        with a .pkl suffix (loadable via `pickle.load(open(path, 'rb'))`). The 
+        loaded data should be in one of the following formats:
+        
+            [
+                {
+                    'verb_output': np.ndarray of float32, shape [97],
+                    'noun_output': np.ndarray of float32, shape [300],
+                    'narration_id': str, e.g. 'P01_101_1'
+                }, ... # repeated entries 
+            ]
+          
+        or 
+        
+            {
+                'verb_output': np.ndarray of float32, shape [N, 97],
+                'noun_output': np.ndarray of float32, shape [N, 300],
+                'narration_id': np.ndarray of str, shape [N,]
+            }
+
+        """),
 )
 parser.add_argument(
         "scores_json_zip",
