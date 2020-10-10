@@ -45,12 +45,10 @@ parser.add_argument(
 )
 parser.add_argument("labels", type=Path, help="Labels (pickled dataframe)")
 parser.add_argument(
-    "--tail-verb-classes-csv", type=Path,
-        default="annotations/EPIC_100_tail_verbs.csv"
+    "--tail-verb-classes-csv", type=Path, default="annotations/EPIC_100_tail_verbs.csv"
 )
 parser.add_argument(
-    "--tail-noun-classes-csv", type=Path,
-        default="annotations/EPIC_100_tail_nouns.csv"
+    "--tail-noun-classes-csv", type=Path, default="annotations/EPIC_100_tail_nouns.csv"
 )
 parser.add_argument(
     "--unseen-participant-ids-csv",

@@ -8,13 +8,13 @@ import numpy as np
 
 
 def make_action_recognition_submission(
-        verb_scores: np.ndarray,
-        noun_scores: np.ndarray,
-        narration_ids: Union[np.ndarray, List[str]],
-        challenge: str = "action_recognition",
-        sls_pt: int = 5,
-        sls_tl: int = 5,
-        sls_td: int = 5,
+    verb_scores: np.ndarray,
+    noun_scores: np.ndarray,
+    narration_ids: Union[np.ndarray, List[str]],
+    challenge: str = "action_recognition",
+    sls_pt: int = 5,
+    sls_tl: int = 5,
+    sls_td: int = 5,
 ):
     """
     Args:
@@ -37,15 +37,15 @@ def make_action_recognition_submission(
         "sls_tl": sls_tl,
         "sls_td": sls_td,
         "results": make_action_recognition_submission_scores_dict(
-                verb_scores, noun_scores, narration_ids
+            verb_scores, noun_scores, narration_ids
         ),
     }
 
 
 def make_action_recognition_submission_scores_dict(
-        verb_scores: np.ndarray,
-        noun_scores: np.ndarray,
-        narration_ids: Union[np.ndarray, List[str]],
+    verb_scores: np.ndarray,
+    noun_scores: np.ndarray,
+    narration_ids: Union[np.ndarray, List[str]],
 ) -> Dict[str, Dict[str, Dict[str, float]]]:
     """
     Args:
@@ -78,7 +78,7 @@ def make_action_recognition_submission_scores_dict(
     """
     results = dict()
     for example_verb_scores, example_noun_scores, narration_id in zip(
-            verb_scores, noun_scores, narration_ids
+        verb_scores, noun_scores, narration_ids
     ):
         results[str(narration_id)] = {
             "verb": make_scores_dict(example_verb_scores),

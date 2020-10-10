@@ -114,10 +114,14 @@ def compute_metrics(
         }
         unseen_accuracies = {
             "verb": topk_accuracy(
-                unseen_ranks["verb"], unseen_groundtruth_df["verb_class"].values, ks=(1,)
+                unseen_ranks["verb"],
+                unseen_groundtruth_df["verb_class"].values,
+                ks=(1,),
             ),
             "noun": topk_accuracy(
-                unseen_ranks["noun"], unseen_groundtruth_df["noun_class"].values, ks=(1,)
+                unseen_ranks["noun"],
+                unseen_groundtruth_df["noun_class"].values,
+                ks=(1,),
             ),
             "action": topk_accuracy(
                 unseen_ranks["action"],

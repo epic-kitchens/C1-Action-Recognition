@@ -49,16 +49,16 @@ def load_results(results_path: Path) -> Dict[str, Any]:
     # These are all in python lists, we turn them into np arrays for convenience
     # We first have to collate them.
     results: Union[List[Dict[str, Any]], Dict[str, Any]]
-    if results_path.suffix.lower() == '.pkl':
-        with open(results_path, 'rb') as f:
+    if results_path.suffix.lower() == ".pkl":
+        with open(results_path, "rb") as f:
             results = pickle.load(f)
-    elif results_path.suffix.lower() == '.pt':
-        results = torch.load(
-            results_path, map_location=torch.device("cpu")
-        )
+    elif results_path.suffix.lower() == ".pt":
+        results = torch.load(results_path, map_location=torch.device("cpu"))
     else:
-        raise ValueError(f"Unknown file extensions {results_path.suffix!r} in path "
-                         f"{results_path}")
+        raise ValueError(
+            f"Unknown file extensions {results_path.suffix!r} in path "
+            f"{results_path}"
+        )
 
     if isinstance(results, list):
         new_results = dict()

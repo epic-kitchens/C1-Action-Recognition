@@ -10,13 +10,14 @@ from utils.challenge import (
 from utils.results import load_results
 
 parser = argparse.ArgumentParser(
-        description="Export model scores to JSON for submission to leaderboard.",
-        formatter_class=argparse.RawTextHelpFormatter,
+    description="Export model scores to JSON for submission to leaderboard.",
+    formatter_class=argparse.RawTextHelpFormatter,
 )
 parser.add_argument(
-        "scores",
-        type=Path,
-        help=dedent("""\
+    "scores",
+    type=Path,
+    help=dedent(
+        """\
         Path to a results file with either a .pt suffix (loadable via `torch.load`) or 
         with a .pkl suffix (loadable via `pickle.load(open(path, 'rb'))`). The 
         loaded data should be in one of the following formats:
@@ -37,19 +38,21 @@ parser.add_argument(
                 'narration_id': np.ndarray of str, shape [N,]
             }
 
-        """),
+        """
+    ),
 )
 parser.add_argument(
-        "scores_json_zip",
-        type=Path,
-        help="Path to zip file to be created containing the JSON submission.",
+    "scores_json_zip",
+    type=Path,
+    help="Path to zip file to be created containing the JSON submission.",
 )
 parser.add_argument(
-        "--sls-pt",
-        choices=[0, 1, 2, 3, 4, 5],
-        default=2,
-        type=int,
-        help=dedent("""\
+    "--sls-pt",
+    choices=[0, 1, 2, 3, 4, 5],
+    default=2,
+    type=int,
+    help=dedent(
+        """\
         Level of pre-training supervision used by your model:
         
         0: No pretraining
@@ -62,14 +65,16 @@ parser.add_argument(
         See https://github.com/epic-kitchens/sls for the canonical reference on SLS-PT.
         
         (default: 2)
-        """),
+        """
+    ),
 )
 parser.add_argument(
-        "--sls-tl",
-        choices=[0, 1, 2, 3, 4, 5],
-        default=3,
-        type=int,
-        help=dedent("""\
+    "--sls-tl",
+    choices=[0, 1, 2, 3, 4, 5],
+    default=3,
+    type=int,
+    help=dedent(
+        """\
         Level of training labels used by your model:
         
         0: No supervision 
@@ -89,14 +94,16 @@ parser.add_argument(
             
         See https://github.com/epic-kitchens/sls for the canonical reference on SLS-TL .
         
-        (default: 3)"""),
+        (default: 3)"""
+    ),
 )
 parser.add_argument(
-        "--sls-td",
-        choices=[0, 1, 2, 3, 4, 5],
-        default=4,
-        type=int,
-        help=dedent("""\
+    "--sls-td",
+    choices=[0, 1, 2, 3, 4, 5],
+    default=4,
+    type=int,
+    help=dedent(
+        """\
         Level of training supervision used by your model:
         
         0: Zero-shot learning (no training data used, only class knowledge incorporated)
@@ -115,12 +122,13 @@ parser.add_argument(
         
         See https://github.com/epic-kitchens/sls for the canonical reference on SLS-TD 
         
-        (default: 4)"""),
+        (default: 4)"""
+    ),
 )
 parser.add_argument(
-        "--force",
-        action="store_true",
-        help="Overwrite the target zip file if it already exists.",
+    "--force",
+    action="store_true",
+    help="Overwrite the target zip file if it already exists.",
 )
 
 
@@ -135,7 +143,7 @@ N_NOUNS = 300
 def main(args):
     if args.scores_json_zip.exists() and not args.force:
         print(
-                f"The output file {args.scores_json_zip} already exists, use --force to overwrite it."
+            f"The output file {args.scores_json_zip} already exists, use --force to overwrite it."
         )
         sys.exit(EXIT_CODE_OUTPUT_FILE_EXISTS)
 
@@ -152,13 +160,13 @@ def main(args):
         sys.exit(EXIT_CODE_DATA_SCHEMA_VIOLATED)
 
     submission = make_action_recognition_submission(
-            verb_scores,
-            noun_scores,
-            narration_ids,
-            challenge="action_recognition",
-            sls_pt=args.sls_pt,
-            sls_tl=args.sls_tl,
-            sls_td=args.sls_td,
+        verb_scores,
+        noun_scores,
+        narration_ids,
+        challenge="action_recognition",
+        sls_pt=args.sls_pt,
+        sls_tl=args.sls_tl,
+        sls_td=args.sls_td,
     )
 
     write_submission_file(submission, args.scores_json_zip)
@@ -180,26 +188,26 @@ def validate_data_schema(noun_scores, verb_scores, narration_ids):
     validation_passed = True
     if n_verb_scores != n_noun_scores:
         print(
-                f"Expected no. of verb scores ({n_verb_scores}) to match no. of noun "
-                f"scores ({n_noun_scores})."
+            f"Expected no. of verb scores ({n_verb_scores}) to match no. of noun "
+            f"scores ({n_noun_scores})."
         )
         validation_passed = False
     if n_verb_scores != n_narration_ids:
         print(
-                f"Expected no. of scores ({n_verb_scores}) to match no. of narration IDs "
-                f"({n_narration_ids})."
+            f"Expected no. of scores ({n_verb_scores}) to match no. of narration IDs "
+            f"({n_narration_ids})."
         )
         validation_passed = False
     if verb_scores.shape[1] != N_VERBS:
         print(
-                f"Expected verb scores to have shape (N, {N_VERBS}) but was "
-                f"{verb_scores.shape}."
+            f"Expected verb scores to have shape (N, {N_VERBS}) but was "
+            f"{verb_scores.shape}."
         )
         validation_passed = False
     if noun_scores.shape[1] != N_NOUNS:
         print(
-                f"Expected noun scores to have shape (N, {N_NOUNS}) but was "
-                f"{noun_scores.shape}."
+            f"Expected noun scores to have shape (N, {N_NOUNS}) but was "
+            f"{noun_scores.shape}."
         )
         validation_passed = False
     return validation_passed
