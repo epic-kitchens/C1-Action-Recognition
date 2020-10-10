@@ -70,3 +70,6 @@ scores that can be submitted to the
 ```bash
 $ python create_submission.py test_results.pt test_results.zip
 ```
+
+An example of the output this script produces: https://www.dropbox.com/s/sxxgyscziryeno1/tsn_fused_split%3Dtest.zip?dl=1
+This is the submission file for the modality fused results of TSN model.
