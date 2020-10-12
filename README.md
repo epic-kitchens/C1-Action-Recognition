@@ -86,3 +86,14 @@ $ python create_submission.py test_results.pt test_results.zip
 
 An example of the output this script produces: https://www.dropbox.com/s/sxxgyscziryeno1/tsn_fused_split%3Dtest.zip?dl=1
 This is the submission file for the modality fused results of TSN model.
+
+
+## License
+
+
+Copyright University of Bristol.
+The repository is published under the [Creative Commons Attribution-NonCommercial 4.0
+ International License](https://creativecommons.org/licenses/by-nc/4.0/). This means that you must 
+give appropriate credit, provide a link to the license, and indicate if changes were 
+made. You may do so in any reasonable manner, but not in any way that suggests the 
+licensor endorses you or your use. You may not use the material for commercial purposes.
