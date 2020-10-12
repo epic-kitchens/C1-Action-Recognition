@@ -6,9 +6,9 @@ To participate and submit to this challenge, register at [Action Recognition Cod
 
 ## Released Models
 
-- For TBN see https://github.com/ekazakos/temporal-binding-network
-- For SlowFast see https://github.com/epic-kitchens/SlowFast (to be released)
-- For TSN/TRN/TSM see (coming soon)
+- [TBN](https://github.com/ekazakos/temporal-binding-network)
+- [SlowFast](https://github.com/epic-kitchens/SlowFast) (to be released)
+- [TSN/TRN/TSM](https://github.com/epic-kitchens/C1-Action-Recognition-TSN-TRN-TSM)
 
 ## Result data formats
 
