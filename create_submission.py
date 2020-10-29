@@ -147,7 +147,7 @@ def main(args):
         )
         sys.exit(EXIT_CODE_OUTPUT_FILE_EXISTS)
 
-    scores_dict = load_results(args.scores_pt)
+    scores_dict = load_results(args.scores)
 
     if not verify_keys_are_present(scores_dict):
         sys.exit(EXIT_CODE_KEYS_NOT_PRESENT)
