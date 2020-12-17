@@ -53,7 +53,7 @@ parser.add_argument(
 parser.add_argument(
     "--unseen-participant-ids-csv",
     type=Path,
-    default="annotaions/EPIC_100_unseen_participant_ids.csv",
+    default="annotations/EPIC_100_unseen_participant_ids.csv",
 )
 
 
