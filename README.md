@@ -2,7 +2,7 @@
 
 Train/Val/Test splits and annotations are available at [Annotations Repo](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
 
-To participate and submit to this challenge, register at [Action Recognition Codalab Challenge](https://competitions.codalab.org/competitions/25923)
+To participate and submit to this challenge, register at [Action Recognition Codalab Challenge](https://codalab.lisn.upsaclay.fr/competitions/776)
 
 ## Released Models
 
