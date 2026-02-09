@@ -2,7 +2,7 @@
 
 Train/Val/Test splits and annotations are available at [Annotations Repo](https://github.com/epic-kitchens/epic-kitchens-100-annotations)
 
-To participate and submit to this challenge, register at [Action Recognition Codalab Challenge](https://codalab.lisn.upsaclay.fr/competitions/776)
+To participate and submit to this challenge, register at [Action Recognition Codabench Challenge](https://www.codabench.org/competitions/13636)
 
 ## Released Models
 
@@ -78,7 +78,7 @@ unseen_verb_accuracy_at_1: ...
 Once you have evaluated your model on the test set, you can simply run this
 script to generate a zip file containing the JSON representation of your model's
 scores that can be submitted to the 
-[challenge leaderboard](https://competitions.codalab.org/competitions/25923).
+[challenge leaderboard](https://www.codabench.org/competitions/13636).
 
 ```bash
 $ python create_submission.py test_results.pt test_results.zip
